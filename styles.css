@@ -114,6 +114,50 @@ main > button {
   font-weight: 500;
 }
 
+/*---Dialog---*/
+#dialog {
+  border: none;
+  background: var(--gray-800-color);
+  border-radius: 0.8rem;
+  padding: var(--spacing-md);
+  width: min(400px, 100%);
+}
+
+dialog::backdrop {
+  background-color: #111827;
+  opacity: 0.75;
+}
+
+#dialog h3 {
+  color: var(--white-100-color);
+  text-align: center;
+  font-size: var(--text-2xl);
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+}
+
+#dialog > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+#dialog > form p {
+  display: flex;
+  align-items: center;
+  font-size: var(--text-lg);
+  color: white;
+  gap: var(--spacing-sm);
+  font-weight: bold;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
 /*---Button---*/
 .Button {
   display: block;
@@ -124,10 +168,11 @@ main > button {
   font-weight: 700;
   cursor: pointer;
   transition: opacity 0.4s ease;
+  font-size: var(--text-sm);
 }
 
 .Button:hover {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .Button--success {
@@ -143,4 +188,23 @@ main > button {
 .Button--dark {
   background-color: var(--slate-800-color);
   color: white;
+}
+
+.Button--light {
+  background-color: var(--white-100-color);
+  color: var(--gray-800-color);
+}
+
+/*---INPUT---*/
+.Input {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 0.4rem;
+  border: none;
+  font-size: var(--text-lg);
+  outline: none;
+  width: 100%;
+}
+
+.Input:user-invalid {
+  outline: 0.175rem solid var(--red-800-color);
 }

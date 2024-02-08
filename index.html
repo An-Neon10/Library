@@ -13,17 +13,51 @@
       </div>
     </header>
     <main class="Container">
-      <button class="Button Button--dark">Add a Book</button>
-      <div class="Books">
-        <div class="Book">
-          <p>New Book</p>
-          <p>Andrés Jaramillo</p>
-          <p>42 pages</p>
-          <button class="Button Button--success">Read</button>
-          <button class="Button Button--danger">Remove</button>
-        </div>
-      </div>
+      <button class="Button Button--dark" id="add-open-modal">
+        Add a Book
+      </button>
+      <div class="Books"></div>
     </main>
+
+    <dialog id="dialog">
+      <h3>Add a new book</h3>
+      <form action="/">
+        <input
+          class="Input"
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Title"
+          required
+        />
+        <input
+          class="Input"
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Author"
+          required
+        />
+        <input
+          class="Input"
+          type="number"
+          name="pages"
+          id="pages"
+          placeholder="Pages"
+          required
+        />
+
+        <p>
+          <span for="read">Have you read it?</span>
+          <input type="checkbox" id="read" name="read" />
+        </p>
+
+        <button class="Button Button--success" type="submit">Submit</button>
+        <button class="Button Button--danger" type="button" id="close-button">
+          Close
+        </button>
+      </form>
+    </dialog>
     <script src="./index.js"></script>
   </body>
 </html>
