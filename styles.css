@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --white-50-color: #f8fafc;
+  --white-100-color: #f1f5f9;
+  --gray-900-color: #111827;
+  --gray-800-color: #1e293b;
+  --slate-800-color: #1e293b;
+  --lime-800-color: #3f6212;
+  --red-800-color: #991b1b;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.8rem;
+  --spacing-md: 1.1rem;
+  --spacing-lg: 1.4rem;
+  --spacing-xl: 1.7rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: var(--gray-900-color);
+  color: var(--white-100-color);
+}
+
+.Container {
+  width: 100%;
+  padding: var(--spacing-xl);
+  min-width: 320px;
+}
+
+/*---Navbar---*/
+.Navbar {
+  background-color: var(--slate-800-color);
+}
+
+.Navbar h2 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+}
+
+/*---Books---*/
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+main > button {
+  width: auto !important;
+  align-self: flex-end;
+}
+
+.Books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--spacing-xl);
+}
+
+.Book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: var(--gray-800-color);
+  padding: var(--spacing-md);
+  border-radius: 0.8rem;
+}
+
+.Book p {
+  font-weight: 500;
+}
+
+/*---Button---*/
+.Button {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 0.75rem;
+  border: none;
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}
+
+.Button:hover {
+  opacity: 0.7;
+}
+
+.Button--success {
+  background: var(--lime-800-color);
+  color: white;
+}
+
+.Button--danger {
+  background-color: var(--red-800-color);
+  color: white;
+}
+
+.Button--dark {
+  background-color: var(--slate-800-color);
+  color: white;
+}
