@@ -4,23 +4,25 @@ const closeButton = document.querySelector("#close-button");
 const form = document.querySelector("form");
 const BooksContainer = document.querySelector(".Books");
 
+class Book {
+  constructor(title, author, pages, read) {
+    this.id = crypto.randomUUID();
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  updateRead() {
+    this.read = !this.read;
+  }
+}
+
 const myLibrary = [
   new Book("Pride and Prejudice", "Jane Austen", 279, true),
   new Book("1984", "George Orwell", 298, false),
   new Book("Hamlet", "William Shakespeare", 289, true),
 ];
-
-function Book(title, author, pages, read) {
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
-
-Book.prototype.updateRead = function () {
-  this.read = !this.read;
-};
 
 function addBookToLibrary({ title, author, pages, read = false }) {
   const book = new Book(title, author, pages, read == "on" ? true : read);
